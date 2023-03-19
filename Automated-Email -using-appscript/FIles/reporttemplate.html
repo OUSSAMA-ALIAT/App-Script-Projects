@@ -1,0 +1,187 @@
+
+
+
+// in this HTML tamplete we will constract the html tables and the stracture of the email we want to send (report format ) using the data from our trix or googlesheet 
+
+
+
+
+
+
+
+<div>
+                    <img src="Logolink" style ="width: 200px ; padding-top: 30px ;padding-bottom: 30px"> // replace Logolink with your logo link 
+                </div>
+    <div>
+       <div style ="background-color: orange ;height: 2px; width: 600px "> </div>
+    <p style =" padding-top: 30px ;padding-bottom: 10px"><b>Hi Team </b> </p>
+    <p style =" padding-top: 10px ;padding-bottom: 10px"> Please see My report  as of <b><?=current_hour?> </b>for your perusal. </p> // replace my report with the name of your report 
+     
+   <p><b> File link </b>:<?= url ?>  </p>  
+// here we will define the tables where the data from your file will be populated 
+
+<div dir="ltr">
+    <br clear="all">
+    <div>
+        <table cellspacing="0" cellpadding="0" dir="ltr" style="table-layout:fixed;font-size:10pt;font-family:Arial;width:0px">
+            <colgroup>
+                <col width="255">
+                    <col width="164">
+                        <col width="122">
+                            <col width="121">
+            </colgroup>
+            <tbody>
+                <tr style="height:21px">
+                   
+                </tr>
+
+
+   <?   T1.forEach(r => { ?>
+      <tr style="overflow:hidden;padding:2px 3px;vertical-align:bottom;border:1px solid rgb(204,204,204)">
+       <th style="overflow:hidden;padding:2px 3px;vertical-align:bottom;border:1px solid rgb(204,204,204)"><?= r[0] ?></th>
+   <th style="overflow:hidden;padding:2px 3px;vertical-align:bottom;border:1px solid rgb(204,204,204)"><?= r[1] ?></th>
+   </tr>
+   <?    }) ?>
+  
+   
+   
+  
+  
+
+   
+   </tbody>
+    </table>
+    
+            
+       
+    </div>
+</div>
+
+
+
+
+<div dir="ltr">
+    <br clear="all">
+    <div>
+        <table cellspacing="0" cellpadding="0" dir="ltr" style="table-layout:fixed;font-size:10pt;font-family:Arial;width:0px">
+            <colgroup>
+                <col width="255">
+                    <col width="164">
+                        <col width="122">
+                            <col width="121">
+            </colgroup>
+            <tbody>
+                <tr style="height:21px">
+                   
+                </tr>
+
+
+   <?   T2.forEach(r => { ?>
+      <tr>
+       <th style="overflow:hidden;padding:2px 3px;vertical-align:bottom;border:1px solid rgb(204,204,204)"><?= r[0] ?></th>
+   <th style= "overflow:hidden;padding:2px 3px;vertical-align:bottom;border:1px solid rgb(204,204,204)"><?= r[1] ?></th>
+   <th style= "overflow:hidden;padding:2px 3px;vertical-align:bottom;border:1px solid rgb(204,204,204)"><?= r[2] ?></th>
+   <th style= "overflow:hidden;padding:2px 3px;vertical-align:bottom;border:1px solid rgb(204,204,204)"><?= r[3] ?></th>
+      <th style= "overflow:hidden;padding:2px 3px;vertical-align:bottom;border:1px solid rgb(204,204,204)"><?= r[4] ?></th>
+      
+   </tr>
+   <?    }) ?>
+  
+   
+   
+  
+  
+
+   
+   </tbody>
+    </table>
+    
+       
+    </div>
+</div>
+
+
+<div dir="ltr">
+    <br clear="all">
+    <div>
+        <table cellspacing="0" cellpadding="0" dir="ltr" style="table-layout:fixed;font-size:10pt;font-family:Arial;width:0px">
+            <colgroup>
+                <col width="255">
+                    <col width="164">
+                        <col width="122">
+                            <col width="121">
+            </colgroup>
+            <tbody>
+                <tr style="height:21px">
+                   
+                </tr>
+
+
+ <?   T3.forEach(r => { ?>
+      <tr>
+       <th style= "overflow:hidden;padding:2px 3px;vertical-align:bottom;border:1px solid rgb(204,204,204)"><?= r[0] ?></th>
+   <th style= "overflow:hidden;padding:2px 3px;vertical-align:bottom;border:1px solid rgb(204,204,204)"><?= r[1] ?></th>
+   <th style= "overflow:hidden;padding:2px 3px;vertical-align:bottom;border:1px solid rgb(204,204,204)"><?= r[2] ?></th>
+   <th style= "overflow:hidden;padding:2px 3px;vertical-align:bottom;border:1px solid rgb(204,204,204)"><?= r[3] ?></th>
+   <th style= "overflow:hidden;padding:2px 3px;vertical-align:bottom;border:1px solid rgb(204,204,204)"><?= r[4] ?></th>
+   </tr>
+   <?    }) ?>
+  
+   
+   
+  
+  
+
+   
+   </tbody>
+    </table>
+    
+         
+    </div>
+</div>
+
+
+<div dir="ltr">
+    <br clear="all">
+    <div>
+        <table cellspacing="0" cellpadding="0" dir="ltr" style="table-layout:fixed;font-size:10pt;font-family:Arial;width:0px">
+            <colgroup>
+                <col width="255">
+                    <col width="164">
+                        <col width="122">
+                            <col width="121">
+            </colgroup>
+            <tbody>
+                <tr style="height:21px">
+                   
+                </tr>
+
+
+<?   T4.forEach(r => { ?>
+      <tr>
+       <th style= "overflow:hidden;padding:2px 3px;vertical-align:bottom;border:1px solid rgb(204,204,204)"><?= r[0] ?></th>
+   <th style= "overflow:hidden;padding:2px 3px;vertical-align:bottom;border:1px solid rgb(204,204,204)"><?= r[1] ?></th>
+   <th style= "overflow:hidden;padding:2px 3px;vertical-align:bottom;border:1px solid rgb(204,204,204)"><?= r[2] ?></th>
+   <th  style= "overflow:hidden;padding:2px 3px;vertical-align:bottom;border:1px solid rgb(204,204,204)"><?= r[3] ?></th>
+   <th style= "overflow:hidden;padding:2px 3px;vertical-align:bottom;border:1px solid rgb(204,204,204)"><?= r[4] ?></th>
+      
+   </tr>
+   <?    }) ?>
+  
+   
+   
+  
+  
+
+   
+   </tbody>
+    </table>
+    
+    <div>
+      <p><b> This is an automated email <b></p>
+   
+            <p class="bg_light" style="text-align: center;">Do you have a Feedback for us ?  <a href="Feedback form link " style="color: rgba(0,0,0,.8); padding-top : 20px;">You can share it with us here</a></p>
+      </div>
+        // Replace Feedback form link with your feedback form
+    </div>
+</div>
