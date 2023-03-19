@@ -9,8 +9,8 @@ and push the tables (4 tables in this case ) to the html templete file
     var hour = date.getHours();
     var url ="Sheet url"; //Replace Sheet url with your file url 
     const ss    = SpreadsheetApp.openByUrl(url);
-    const ws    = ss.getSheetByName("WFM Summary");
-    const ws1   = ss.getSheetByName("WFMAutomation");
+    const ws    = ss.getSheetByName("tab1");
+    const ws1   = ss.getSheetByName("configtab");
 
 //Table range used t define the table rage 
 
