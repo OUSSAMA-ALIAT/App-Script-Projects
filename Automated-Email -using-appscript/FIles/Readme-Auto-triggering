@@ -1,0 +1,4 @@
+ 
+ // Auto triggering the script 
+ 
+ To trigger the script automatically user triggers option in app script to trigger the function "sendme" and set the trigger event according to your needs
