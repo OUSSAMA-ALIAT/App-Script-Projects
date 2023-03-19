@@ -69,10 +69,8 @@ if(hour > 7 && hour < 23 ){
                       });
                       }else{
                  
- GmailApp.sendEmail("oaliat@google.com",subject,"Please read it "+hour);
+ GmailApp.sendEmail("youremail@email.com",subject,"Please read it "+hour); // replace youremail@email.com with your email to recive an email in case the excution is not send (hours when u den't need to send email )
                      
-                    
-
 
 }
 }
