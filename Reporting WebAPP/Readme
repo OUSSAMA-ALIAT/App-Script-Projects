@@ -1,1 +1,15 @@
 
+
+//// This is a simple webapp built on google appscript for 2 ways reporting waise utilizing google shhet as database and automated escilation 
+based on priority and category 
+/////
+
+1- Link for the preview app :
+https://script.google.com/macros/s/AKfycbzzkm3YYeuxBI2NEE887LA82bZRsqr4B24qfzH5bOQK8MN8h9La6CG6sJ8ZuvQpnVYHEQ/exec
+
+2- Link to the config file and database (Make a copy ) :
+
+https://docs.google.com/spreadsheets/d/19ZFSIb3dAL70sxMt4mpJeW4JmF9pRzH7jHAjhaplYjM/edit?usp=sharing
+
+
+
