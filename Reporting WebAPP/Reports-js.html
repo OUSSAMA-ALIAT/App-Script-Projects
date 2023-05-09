@@ -1,0 +1,118 @@
+
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+ 
+  function getData2() {
+    google.script.run.withSuccessHandler(function(ar) {
+      // Create the table element
+ var displayTable = '<div class="table-responsive" style="max-height: 500px;"><table class="table" id="mainTable"><tr class="centered"><th class="centered">Report ID</th><th>Date</th><th>Category</th><th>Priority </th><th>Status</th><th>Report Aging</th><th>Action</th></tr>';
+
+// Iterate over the array
+ar.forEach(function(item, index) {
+  // Construct the table row
+  displayTable += '<tr><td onmouseover="this.style.transform=\'scale(1.2)\'" onmouseout="this.style.transform=\'scale(1)\'">' + item[0] + '</td>';
+  if (item[1]) {
+    displayTable += '<td onmouseover="this.style.transform=\'scale(1.2)\'" onmouseout="this.style.transform=\'scale(1)\'">' + new Date(item[1]).toLocaleDateString() + '</td>';
+  } else {
+    displayTable += '<td class="badge" onmouseover="this.style.transform=\'scale(1.2)\'" onmouseout="this.style.transform=\'scale(1)\'">N/A</td>';
+  }
+  displayTable += '<td onmouseover="this.style.transform=\'scale(1.2)\'" onmouseout="this.style.transform=\'scale(1)\'">' + item[3] + '</td><td onmouseover="this.style.transform=\'scale(1.2)\'" onmouseout="this.style.transform=\'scale(1)\'">' + item[5] + '</td><td onmouseover="this.style.transform=\'scale(1.2)\'" onmouseout="this.style.transform=\'scale(1)\'">' + item[7] + '</td>';
+
+  // Calculate the case aging
+  var currentDate = new Date();
+  var caseDate = new Date(item[1]);
+  var caseAging = Math.round((currentDate - caseDate) / (1000 * 60 * 60 * 24));
+
+  // Set the background color based on the case aging
+  if (caseAging >= 1) {
+    displayTable += '<td style="background-color: rgb(255, 205, 210); border-radius: 20px;font-weight: bold; font-color: white;transform: scale(1); font-size: 10px; height: 10px; width: 40px;"onmouseover="this.style.transform=\'scale(1.2)\'" onmouseout="this.style.transform=\'scale(1)\'" />' + caseAging + ' Days</td>';
+  } else {
+    displayTable += '<td style="background-color: rgb(165, 214, 167); border-radius: 20px;font-weight: bold; font-color: white;transform: scale(1); font-size: 10px; height: 10px; width: 40px;" onmouseover="this.style.transform=\'scale(1.2)\'" onmouseout="this.style.transform=\'scale(1)\'">' + caseAging + ' days</td>';
+  }
+  displayTable += '<td><input type="button" value="Details" class="btn btn-primary modal-trigger" data-target="modal3" style="border-radius: 20px;font-weight: bold; font-color: white; background: #2962ff; transform: scale(1); font-size: 10px; height: 40px; width: 80px;" onclick="showCaseData2(\'' + item[0] + '\')" onmouseover="this.style.transform=\'scale(1.2)\'" onmouseout="this.style.transform=\'scale(1)\'" /></td></tr>';
+});
+
+// Close the table element
+displayTable += '</table></div>';
+      // Insert the table into the DOM
+      document.getElementById("rowdata").innerHTML = displayTable;
+    }).getconcerns();
+  }
+
+  // Call the getData function every 1 minute
+  setInterval(getData2, 600);
+
+
+
+
+var selectBox = document.querySelectorAll('select');
+  M.FormSelect.init(selectBox);
+
+  var model= document.querySelectorAll('.modal');
+  M.Modal.init(model);
+
+  var clap = document.querySelectorAll('.collapsible');
+var clapinst = M.Collapsible.init(clap);
+
+  var float = document.querySelectorAll('.fixed-action-btn');
+  var floatinst = M.FloatingActionButton.init(float);
+
+  var nav = document.querySelectorAll('.sidenav');
+  M.Sidenav.init(nav);
+
+  var model= document.querySelectorAll('.modal');
+
+  M.Modal.init(model);
+
+ var selectBox = document.querySelectorAll('.select');
+  M.FormSelect.init(selectBox);
+
+var droptrig = document.querySelectorAll('dropdown-trigger');
+    var droptriginstances = M.Dropdown.init(droptrig);
+  
+
+
+
+
+});
+
+
+
+function showCaseData2(caseId) {
+ 
+google.script.run.withSuccessHandler(function(data) {
+var date = new Date(data.date);
+var dateString = date.toLocaleDateString();
+
+var displayTable1 = '<div id="modal3-header" class="modal-header">';
+displayTable1 += '<h3 style="padding-left: 20px; padding-top: 20px"><b>Report ID:</b> ' + caseId + '</h3>';
+
+document.getElementById('modal3-header').innerHTML = displayTable1;
+
+
+var displayTable = '<div  class="row">';
+displayTable += '<div  class="col s3">';
+displayTable += '<p id="rpname" class="heading">Reported By</p> ' + data.Reportedby; 
+displayTable += '</div>';
+displayTable += '<div class="col s3">';
+displayTable += '<p class="heading">Category</p> ' + data.Category;
+displayTable += '</div>';
+displayTable += '<div class="col s3">';
+displayTable += '<p class="heading">Priority</p> ' + data.P;
+displayTable += '</div>';
+
+displayTable += '</div>';
+
+displayTable += '<div  class="text-block">';
+displayTable += '<p id="details" class="heading">Details:</p> ' + data.Details;
+displayTable += '</div>';
+
+document.getElementById('modal3-content').innerHTML = displayTable;
+}).getCaseData2(caseId);
+
+}
+
+
+</script>
