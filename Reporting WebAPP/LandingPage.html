@@ -1,0 +1,176 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+     
+   <?!= include("LandingPage-CSS"); ?>
+  <nav class=" transparent">
+         <div class="nav-wrapper ">
+           
+            <a href="<?= ScriptApp.getService().getUrl();?>?v=LandingPage" >
+             
+                 <img src=""  style="width:220px;height:60px;">
+        
+                
+            </a>
+
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+               <li><a href= "<?= ScriptApp.getService().getUrl();?>?v=LandingPage" class ="black-text">Home Page</a></li>
+               <li><a href= "<?= ScriptApp.getService().getUrl();?>?v=LandingPage" class ="black-text">Profile</a></li>
+               <li>
+                  <a href="<?= ScriptApp.getService().getUrl();?>?v=LandingPage" class ="black-text"><?= name ?> </a>
+               </li>
+            </ul>
+         </div>
+      </nav>
+      <ul id="slide-out" class="sidenav">
+         <li>
+            <div class="user-view">
+            
+                 <div class="background">
+        <img src="">
+      </div>
+                 <a href="<?= ScriptApp.getService().getUrl();?>?v=LandingPage"><img class="circle" src=""></a>
+
+               <a href="<?= ScriptApp.getService().getUrl();?>?v=LandingPage"><span class="black-text name"><?= name ?> </span></a>
+               <a href="<?= ScriptApp.getService().getUrl();?>?v=LandingPage"><span class="black-text email"><?= name ?> </span></a>
+            </div>
+         </li>
+
+<li tabindex="0"><a href="<?= ScriptApp.getService().getUrl();?>?v=LandingPage"><i class="material-icons">home</i>Home Pgae</a></li>
+         <li tabindex="0"><a href="<?= ScriptApp.getService().getUrl();?>?v=Reported"><i class="material-icons">mode_edit</i>Pending Reports</a></li>
+         <li tabindex="0"><a href="<?= ScriptApp.getService().getUrl();?>?v=Reports"><i class="material-icons">mode_edit</i>MY Reports</a></li>
+           <!----- <div class="divider"></div>
+         </li>
+         <li><a class="subheader">Useful Links </a></li>
+         <li tabindex="0"><a class="waves-effect" href="<?= ScriptApp.getService().getUrl();?>?v=LandingPage"><i class=" material-icons">info</i>Information Center </a></li>
+       ---->
+
+      </ul>
+      <a href="<?= ScriptApp.getService().getUrl();?>?v=LandingPage" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+    
+
+
+  </head>
+  <body>
+    
+
+ 
+                     
+  
+
+<div class=" row" >
+  
+  
+
+<div class="col s6"  style="padding-top: 10px"  > 
+   <h1 style="padding-top= 100px" >Hi <b><?= name ?> </b>!</h1>
+                    
+    <p><h4>Do you have any Reports?</h4></p>
+     <p><h4>Please tell us so we can support you!</h4></p>    
+   
+
+  
+        <div class=" row inline " >
+           <div class=" col s6 " > <p><h5>My Report is related to:</h5></p></div>
+          <div class="input-field col s4 left "> 
+                  <select id="action1" required>
+                    <option disabled selected > Select  </option>
+                     <option> Option 1 </option>
+                     <option> Option 2</option>
+                     <option>Option 3</option>
+                     <option> Option 4</option>                    
+                     <option> Option 5</option>
+                     <option> Option 6 </option>
+                     <option> Option 7</option>
+                    
+                     <option> Other</option>
+                  </select>
+                  <label></label>
+               </div>
+                  </div>
+               <div class="row "  style="padding-top: 20px">
+               <div class="input-field col s12  " >
+                  <textarea id="action2" class="materialize-textarea validate" data-length="400" required data-error="Please provide more information" ></textarea>
+                  <label for="action2">More information </label>
+               </div>
+               </div>
+             
+ <div class="row " >
+                <div class="input"> 
+              <button id="btnm1"  class="right button waves-effect waves-light blue accent-4 btn modal-trigger" type="submit" name="action" style="border-radius:30px" onclick="submitForm()">
+      <b>Submit<b><i class="material-icons right">send</i>
+    </button>
+           
+                </div>            
+ </div>
+ </div>
+<div class=" background center col s6  " style="padding-bottom:10px ;padding-top:0px;" > 
+
+<img src="https://blush.design/api/download?shareUri=00gmrwvui0_PQGuy&c=Bottom_0%7E393f82-0.1%7E393f82-0.2%7E2b44ff-0.3%7E2b44ff_Hair_0%7Ee8e1e1-0.1%7Ee8e1e1-0.2%7Eb58143-0.3%7Ee8e1e1_Skin_0%7Eb28b67-0.1%7Eeac7a8-0.2%7E915b3c-0.3%7Eeac7a8_Top_0%7E43d26c-0.1%7Ef2f2f2-0.2%7E43d26c-0.3%7Eff4133&w=800&h=800&fm=png">
+
+  
+          
+         
+</div>
+
+ </div>
+ 
+   <div class="fixed-action-btn">
+  <a class="btn-floating btn-large blue accent-4">
+    <i class="large material-icons">info</i>
+  </a>
+  <ul>
+    <li><a  class="btn-floating red"><i class="material-icons">bug_report</i></a></li>
+    <li><a  class="btn-floating yellow darken-1"><i class="material-icons">insert_chart</i></a></li>
+    <li><a href="<?= ScriptApp.getService().getUrl();?>?v=LandingPage" class="btn-floating green"><i class="material-icons">refresh</i></a></li>
+    <li><a href="<?= ScriptApp.getService().getUrl();?>?v=LandingPage" class="btn-floating blue"><i class="material-icons">home</i></a></li>
+  </ul>
+</div>
+
+
+
+
+
+
+  </body>
+
+ <footer class="page-footer  transparent ">
+          <div class="footer-copyright transparent center ">
+            <div class="container  black-text" style="font-weight:normal">
+             Copyright ALIAT © 2023
+            </div>
+          </div>
+        </footer>
+        
+  <div id="modal2" class="modal" style="border-radius: 20px;">
+               <div class="modal-content center ">
+                  <h4>Thank you <?=name ?></h4>
+                 <h4>Your Report is successfuly submited</h4>
+              </div>
+ </div>
+<div id="modal1" class="modal" style="border-radius: 20px;">
+               <div class="modal-content center ">
+                  <h4>Hi <?=name ?></h4>
+                  <p style="font-weight:normal">You are about to submit a Report!</p>
+                   <p style="font-weight:normal">Please Click Agree!</p>
+             
+          
+                  <a id="btn1"  data-target="modal2"  class=" modal-close button waves-effect waves-light blue accent-4 btn modal-trigger" style="border-radius:30px" >Agree</a> 
+            
+            </div>
+</div>
+ 
+   <?!= include("LandingPage-js"); ?>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</html>
