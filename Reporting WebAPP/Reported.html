@@ -1,0 +1,151 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  
+      <?!= include("Reported-css"); ?>
+
+   </head> 
+   <body>
+       <nav class=" transparent">
+         <div class="nav-wrapper ">
+           
+            <a href="<?= ScriptApp.getService().getUrl();?>?v=LandingPage" >
+             
+                 <img src=""  style="width:220px;height:60px;">
+        
+                
+            </a>
+
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+               <li><a href= "<?= ScriptApp.getService().getUrl();?>?v=LandingPage"class ="black-text">Home Page</a></li>
+               <li><a href= "<?= ScriptApp.getService().getUrl();?>?v=LandingPage" class ="black-text">Profile</a></li>
+               <li>
+                  <a href="<?= ScriptApp.getService().getUrl();?>?v=LandingPage" class ="black-text"><?= name ?> </a>
+               </li>
+            </ul>
+         </div>
+      </nav>
+      <ul id="slide-out" class="sidenav white" >
+         <li>
+            <div class="user-view">
+            
+                 <div class="background">
+        <img src="">
+      </div>
+                 <a href="<?= ScriptApp.getService().getUrl();?>?v=LandingPage"><img class="circle" src=""></a>
+
+               <a href="<?= ScriptApp.getService().getUrl();?>?v=LandingPage"><span class="black-text name"><?= name  ?> </span></a>
+               <a href="<?= ScriptApp.getService().getUrl();?>?v=LandingPage"><span class="black-text email"><?= name ?> </span></a>
+            </div>
+         </li>
+
+<li><a href="<?= ScriptApp.getService().getUrl();?>?v=LandingPage"><i class="material-icons">home</i>Home Pgae</a></li>
+      
+         <li>
+            <div class="divider"></div>
+         </li>
+         <li><a class="subheader">Useful Links </a></li>
+         <li><a class="waves-effect" href="<?= ScriptApp.getService().getUrl();?>?v=LandingPage"><i class=" material-icons">info</i>FAQs </a></li>
+         
+
+      </ul>
+      <a href="<?= ScriptApp.getService().getUrl();?>?v=LandingPage" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    
+    <div class="row">
+<div class="col s12" style="padding-bottom:0px ;padding-top:0px;padding-left:20px;padding-right:20px">
+  <div class="row">
+<div class="col s3" style="padding-bottom:20px ;padding-top:20px;padding-left:20px;padding-right:20px"> 
+
+
+<div class="row collection" style="border: none; border-radius: 20px;color:white">
+
+<a class="collection-item special1" style="color:gray;"><h7  >Assigned cases to <b> <?= name ?></b></h7></a>
+
+</div>
+
+      
+
+</div>
+<div class="row col s9 " > 
+<ul class="collapsible "style= "border-radius: 15px;"    >
+    <li >
+      <div class="collapsible-header"><i class="material-icons ">arrow_drop_down</i>Pending Tasks</div>
+      <div class="collapsible-body">
+       
+        <span>  
+          <table  class="  highlight centered " id="rowdata" ></table>
+          </span>
+	        
+    </li>
+ </ul>
+
+   
+    </li>
+ </ul>
+</div>
+
+</div>
+
+   </div>
+
+   
+</div>
+
+<div id="modal3" class="modal">
+<div id="modal3-header" class="modal-header">
+  </div>
+<div id="modal3-content" class="modal-content">
+              
+</div>
+                <div class="modal-footer">
+              
+                   <div class="text-block center ">
+<button id="actionButton" class="btn modal-close btn-primary" style="border-radius: 20px; font-weight: bold; color: white; background-color: #2962ff;" onmouseover="this.style.transform = 'scale(1.2)'" onmouseout="this.style.transform = 'scale(1)'">Update Status</button>
+
+</div>
+</div>
+               </div>
+            
+        <div id="loading" style="display: none;">Loading, please wait...</div>       
+
+
+
+
+ <div class="fixed-action-btn">
+  <a class="btn-floating btn-large blue accent-4">
+    <i class="large material-icons">info</i>
+  </a>
+  <ul>
+    <li><a  class="btn-floating red"><i class="material-icons">bug_report</i></a></li>
+    <li><a  class="btn-floating yellow darken-1"><i class="material-icons">insert_chart</i></a></li>
+    <li><a href="<?= ScriptApp.getService().getUrl();?>?v=cases" class="btn-floating green"><i class="material-icons">refresh</i></a></li>
+    <li><a href="<?= ScriptApp.getService().getUrl();?>?v=LandingPage" class="btn-floating blue"><i class="material-icons">home</i></a></li>
+  </ul>
+</div>
+<!--Library-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <?!= include("Reported-js"); ?>
+  
+
+<!--HTML-->
+
+  </body>
+  <footer class="page-footer transparent">
+          <div class="footer-copyright white">
+            <div class="container center black-text ">
+             Copyright ALIAT © 2023
+            </div>
+          </div>
+        </footer>
+</html>
