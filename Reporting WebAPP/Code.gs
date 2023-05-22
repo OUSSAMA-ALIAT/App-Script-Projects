@@ -17,21 +17,12 @@ Route[route] = callback;
 
 
  function doGet(e){
-
-   
-
-  Route.path("LandingPage",loadLandingPage);
+   Route.path("LandingPage",loadLandingPage);
   Route.path("Reports",loadReports);
   Route.path("Reported",loadReported);
-
-
-
-
 if(Route[e.parameters.v]) {
 return Route[e.parameters.v]();
 } else {
-
-
 return render("LandingPage");
 }
 }
@@ -60,16 +51,8 @@ return render("LandingPage");
     .addMetaTag("viewport", "width=device-width, initial-scale=1")
     ;
 }
-
-
-
 function loadLandingPage(){
-
-  
 return render("LandingPage",{ name: htmlname });
-
-
-
 
 }
 
@@ -79,14 +62,11 @@ return render("Reports",{name: htmlname });
 
 }
 
-
-
 function loadReported(){
   
 return render("Reported",{name: htmlname });
 
 }
-
 
 function include (filename){
   return render(filename).getContent();
@@ -95,14 +75,10 @@ function include (filename){
 
 function userclicked(info){
 
-
-
-
 var encrypted = Utilities.base64Encode(LDAP);
 var truncated = encrypted.substring(0, 5);
 
 var date = new Date();
-
 
 var minutes = date.getMinutes().toString().padStart(2, '0');
 
@@ -111,20 +87,16 @@ var seconds = date.getSeconds().toString().padStart(2, '0');
 
 var timeString = minutes + seconds;
 
-
  var uniqueID = timeString+dateM+truncated ;
  var status = "Open";
 var ss2 = SpreadsheetApp.openByUrl("https://docs.google.com/spreadsheets/d/1YT44Sxrr7pnm7GRD2UzZwMNbzRkzXBjwMlpceW0KnMc/edit#gid=69383900");
 var ws2 = ss2.getSheetByName("Info table 1");
 var data2 =ws2.getRange(1,1,ws2.getLastRow(),1).getValues();
-
-
 var plist = data2.map(function(r){ return r[0];});
 var cnrtype = info.cnrtype;
 var cnrinfo = info.cnrinfo;
 var position = plist.indexOf(cnrtype);
 var Per = ws2.getRange(position+1, 2).getValue();
-
 
 if (Per == 'P0'){
 var colnum = 3;
@@ -139,20 +111,13 @@ var assigned = data3.map(function(r){ return r[0];});
 var position = assigned.indexOf(LDAP);
 var assignedto = ws3.getRange(position+1, colnum).getValue();
 console.log(assignedto);
-
-
-
 var ss =SpreadsheetApp.openByUrl("https://docs.google.com/spreadsheets/d/1YT44Sxrr7pnm7GRD2UzZwMNbzRkzXBjwMlpceW0KnMc/edit#gid=69383900");
 var ws = ss.getSheetByName("data");  
    ws.appendRow([uniqueID,dateM,LDAP,info.cnrtype ,info.cnrinfo, Per,assignedto,status]);
    
-
-
-
 var email = Session.getEffectiveUser().getEmail();
 
 var email2 = assignedto+"@gmail.com";
-
 
 var subject = 'Your Report has been submitted '+ "||" + "Report ID:" + uniqueID ;
 
@@ -160,7 +125,6 @@ var subject2 =  'URGENT ACTION REQUIRED: A Report has been Reported '+"|| " +  "
 
 var body = 'if y//ou recieved this email please reach out to @Questions. Thank you'+' '+email;
  
-
 var htmlTemplate = HtmlService.createTemplateFromFile('email');
         htmlTemplate.LDAP = LDAP; 
         htmlTemplate.uniqueID = uniqueID; 
