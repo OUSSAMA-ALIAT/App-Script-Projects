@@ -18,8 +18,6 @@ document.getElementById("btn1").addEventListener("click",addconcern);
 var model= document.querySelectorAll('.modal');
   M.Modal.init(model);
 
-
-
   });
   
 function addconcern (){
@@ -51,8 +49,7 @@ google.script.run.withSuccessHandler(function(response) {
    
    M.FormSelect.init(myaction1opt);
   
-  
-
+ 
 }
 
 
@@ -67,10 +64,5 @@ google.script.run.withSuccessHandler(function(response) {
       M.Modal.getInstance(modal1).open();
     }
   }
-
-
-
-
-
 
       </script>
