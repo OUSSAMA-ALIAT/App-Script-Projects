@@ -40,58 +40,32 @@ displayTable += '</table></div>';
       document.getElementById("rowdata").innerHTML = displayTable;
     }).getconcerns();
   }
-
-  // Call the getData function every 1 minute
+// Call the getData function every 1 minute
   setInterval(getData2, 600);
-
-
-
-
-var selectBox = document.querySelectorAll('select');
+ var selectBox = document.querySelectorAll('select');
   M.FormSelect.init(selectBox);
-
-  var model= document.querySelectorAll('.modal');
+ var model= document.querySelectorAll('.modal');
   M.Modal.init(model);
-
-  var clap = document.querySelectorAll('.collapsible');
-var clapinst = M.Collapsible.init(clap);
-
-  var float = document.querySelectorAll('.fixed-action-btn');
+ var clap = document.querySelectorAll('.collapsible');
+ var clapinst = M.Collapsible.init(clap);
+ var float = document.querySelectorAll('.fixed-action-btn');
   var floatinst = M.FloatingActionButton.init(float);
-
   var nav = document.querySelectorAll('.sidenav');
   M.Sidenav.init(nav);
-
-  var model= document.querySelectorAll('.modal');
-
-  M.Modal.init(model);
-
- var selectBox = document.querySelectorAll('.select');
+ var model= document.querySelectorAll('.modal');
+M.Modal.init(model);
+var selectBox = document.querySelectorAll('.select');
   M.FormSelect.init(selectBox);
-
 var droptrig = document.querySelectorAll('dropdown-trigger');
     var droptriginstances = M.Dropdown.init(droptrig);
-  
-
-
-
-
-});
-
-
-
+  });
 function showCaseData2(caseId) {
- 
-google.script.run.withSuccessHandler(function(data) {
+ google.script.run.withSuccessHandler(function(data) {
 var date = new Date(data.date);
 var dateString = date.toLocaleDateString();
-
 var displayTable1 = '<div id="modal3-header" class="modal-header">';
 displayTable1 += '<h3 style="padding-left: 20px; padding-top: 20px"><b>Report ID:</b> ' + caseId + '</h3>';
-
 document.getElementById('modal3-header').innerHTML = displayTable1;
-
-
 var displayTable = '<div  class="row">';
 displayTable += '<div  class="col s3">';
 displayTable += '<p id="rpname" class="heading">Reported By</p> ' + data.Reportedby; 
@@ -102,17 +76,11 @@ displayTable += '</div>';
 displayTable += '<div class="col s3">';
 displayTable += '<p class="heading">Priority</p> ' + data.P;
 displayTable += '</div>';
-
 displayTable += '</div>';
-
 displayTable += '<div  class="text-block">';
 displayTable += '<p id="details" class="heading">Details:</p> ' + data.Details;
 displayTable += '</div>';
-
 document.getElementById('modal3-content').innerHTML = displayTable;
 }).getCaseData2(caseId);
-
 }
-
-
 </script>
