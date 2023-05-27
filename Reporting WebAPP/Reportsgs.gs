@@ -1,9 +1,6 @@
 
-
 function getconcerns()
 {
-
-
   var sheet = SpreadsheetApp.openById('1YT44Sxrr7pnm7GRD2UzZwMNbzRkzXBjwMlpceW0KnMc');
   var regionSheet = sheet.getSheetByName("data");
   var regionRange = regionSheet.getDataRange();
@@ -12,7 +9,6 @@ function getconcerns()
   // Filter the data based on multiple criteria
   var filteredData = data.filter(function(row) {
     return (row[2] == LDAP);
-
 });
 console.log(filteredData );
 console.log(LDAP );
@@ -20,22 +16,16 @@ console.log(LDAP );
 console.log(data);
 console.log(filteredData);
   return regionValues;
-
 }
-
-
 function getCaseData2(caseId) {
   // Open the sheet and get the sheet that contains the data
   var sheet = SpreadsheetApp.openById("1YT44Sxrr7pnm7GRD2UzZwMNbzRkzXBjwMlpceW0KnMc").getSheetByName("data");
-
-  // Get the values from the first column of the sheet, which are the case IDs
+ // Get the values from the first column of the sheet, which are the case IDs
   var data = sheet.getRange(1, 1, sheet.getLastRow(), 1).getValues();
   var caseIdList = data.map(function(r){ return r[0];});
-
-  // Find the position of the case ID in the list
+ // Find the position of the case ID in the list
   var position = caseIdList.indexOf(caseId);
-
-  // Get the data for the case from the sheet using the position
+ // Get the data for the case from the sheet using the position
   var casen = sheet.getRange(position+1, 1).getValue();
   var Reportedby  = sheet.getRange(position+1, 3).getValue();
   var Category  = sheet.getRange(position+1, 4).getValue();
