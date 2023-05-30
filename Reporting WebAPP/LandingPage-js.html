@@ -3,38 +3,27 @@
 <script>
 
 document.addEventListener('DOMContentLoaded', function() {
-
-
 document.getElementById("btn1").addEventListener("click",addconcern);
-
-
-   var float = document.querySelectorAll('.fixed-action-btn');
-    var floatinst = M.FloatingActionButton.init(float);
-  var nav = document.querySelectorAll('.sidenav');
-  M.Sidenav.init(nav);
-  var selectBox = document.querySelectorAll('select');
-  M.FormSelect.init(selectBox);
- 
+var float = document.querySelectorAll('.fixed-action-btn');
+var floatinst = M.FloatingActionButton.init(float);
+var nav = document.querySelectorAll('.sidenav');
+M.Sidenav.init(nav);
+var selectBox = document.querySelectorAll('select');
+M.FormSelect.init(selectBox);
 var model= document.querySelectorAll('.modal');
-  M.Modal.init(model);
-
-  });
-  
+ M.Modal.init(model);
+});
 function addconcern (){
-
-var info = {};
-
-
-   info.cnrtype = document.getElementById("action1").value;  
-   info.cnrinfo = document.getElementById("action2").value;
- 
+   var info = {};
+info.cnrtype = document.getElementById("action1").value;  
+info.cnrinfo = document.getElementById("action2").value;
 google.script.run.withSuccessHandler(function(response) {
-          // Display a message indicating that the form was submitted successfully
-         alert("Form submitted successfully."); 
-        }).withFailureHandler(function(error) {
-          // Display an error message if the form submission fails
-          alert("Error: " + error.message); 
-          }).userclicked(info);
+// Display a message indicating that the form was submitted successfully
+alert("Form submitted successfully."); 
+}).withFailureHandler(function(error) {
+// Display an error message if the form submission fails
+alert("Error: " + error.message); 
+}).userclicked(info);
 
    document.getElementById("action1").value ="";  
    document.getElementById("action2").value ="";
