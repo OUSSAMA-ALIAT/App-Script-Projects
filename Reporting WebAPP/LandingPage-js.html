@@ -24,34 +24,24 @@ alert("Form submitted successfully.");
 // Display an error message if the form submission fails
 alert("Error: " + error.message); 
 }).userclicked(info);
-
-   document.getElementById("action1").value ="";  
-   document.getElementById("action2").value ="";
-   
-   M.updateTextFields();
-
-   var myaction1opt = document.getElementById("action2");
-   var myaction1opt = document.getElementById("action1");
-  
-   
-   myaction1opt.selectedIndex = 0;
-   
-   M.FormSelect.init(myaction1opt);
-  
- 
+document.getElementById("action1").value ="";  
+document.getElementById("action2").value ="";
+M.updateTextFields();
+var myaction1opt = document.getElementById("action2");
+var myaction1opt = document.getElementById("action1");
+myaction1opt.selectedIndex = 0;
+M.FormSelect.init(myaction1opt);
 }
-
-
- function submitForm() {
-    var action1 = document.getElementById("action1").value;
-    var action2 = document.getElementById("action2").value;
-    if (!action1 || !action2) {
-      alert("Please fill out all fields");
-    } else {
-      // trigger modal1 here
-      var modal1 = document.getElementById("modal1");
-      M.Modal.getInstance(modal1).open();
-    }
-  }
+function submitForm() {
+var action1 = document.getElementById("action1").value;
+var action2 = document.getElementById("action2").value;
+if (!action1 || !action2) {
+alert("Please fill out all fields");
+} else {
+// trigger modal1 here
+var modal1 = document.getElementById("modal1");
+M.Modal.getInstance(modal1).open();
+}
+}
 
       </script>
